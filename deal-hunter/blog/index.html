@@ -127,8 +127,8 @@
 </head>
 <body>
   <header>
-    <h1>🔥 Daily Deals</h1>
-    <p>Best Amazon deals updated daily. Save up to 50%!</p>
+    <h1>🔥 Daily Deals Australia</h1>
+    <p>Best Amazon Australia deals updated daily. Save up to 50%!</p>
   </header>
   
   <div class="stats">
@@ -141,7 +141,7 @@
       <div class="stat-label">Max Discount</div>
     </div>
     <div class="stat">
-      <div class="stat-value" id="total-savings">$1565</div>
+      <div class="stat-value" id="total-savings">A$1565</div>
       <div class="stat-label">Total Savings</div>
     </div>
   </div>
@@ -151,7 +151,7 @@
     <div class="deals-grid" id="deals"></div>
   </main>
   
-  <p class="updated">Last updated: 2/26/2026, 9:00:34 PM</p>
+  <p class="updated">Last updated: 2/26/2026, 9:14:33 PM</p>
   
   <footer>
     <p>Prices and availability are accurate as of the date/time indicated and are subject to change.</p>
@@ -161,6 +161,7 @@
   <script>
     const deals = [{"id":"B0B8TR1VLM","title":"RuffleButts Baby Girls UPF 50+ Sun Protection Floral Long Sleeve Rash Guard Swimsuit","price":28.19,"originalPrice":59.24,"discount":52,"category":"baby"},{"id":"B01LYNW421","title":"Beckham Hotel Collection Bed Pillows Standard/Queen Size Set of 2","price":59.19,"originalPrice":112.81,"discount":48,"category":"home"},{"id":"B01KE592JU","title":"Methylated Multivitamin for Men with Bioavailable Vitamins, Chelated Minerals","price":25.88,"originalPrice":43.71,"discount":41,"category":"health"},{"id":"B0FNQDNGXY","title":"Samsung 27\" Odyssey OLED G5 (G50SF) QHD & QD-OLED Gaming Monitor, 180Hz","price":493.61,"originalPrice":775.68,"discount":36,"category":"tech"},{"id":"B01728NLRG","title":"Coway Airmega AP-1512HH(W) True HEPA Purifier with Air Quality Monitoring","price":218.59,"originalPrice":324.37,"discount":33,"category":"home"},{"id":"B0C2C9NHZW","title":"LEVOIT Top Fill Humidifiers for Bedroom, 2.5L Tank for Large Room","price":39.42,"originalPrice":56.4,"discount":30,"category":"home"},{"id":"B083JHCCV2","title":"Boka Fluoride Free Toothpaste, Nano Hydroxyapatite for Sensitive Teeth","price":14.09,"originalPrice":19.73,"discount":29,"category":"health"},{"id":"B0CG5P42QH","title":"G4Free Petite Wide Leg Pants for Women Yoga Dress Pants with Pockets","price":37.13,"originalPrice":52.17,"discount":29,"category":"fashion"},{"id":"B0GGTVNKGP","title":"Samsung Galaxy S26 Ultra, Unlocked Android Smartphone + $200 Gift Card, 512GB","price":1833.45,"originalPrice":2397.6,"discount":24,"category":"phone"},{"id":"B0C59FJY2X","title":"Extra Deep King Sheet Set - 6 Piece Breathable and Cooling Sheets","price":59.87,"originalPrice":77.56,"discount":23,"category":"home"},{"id":"B0BZLM8GJ2","title":"AXV Vibration Plate Fitness Platform Exercise Machine","price":141.02,"originalPrice":183.33,"discount":23,"category":"fitness"},{"id":"B0CT8SRHQC","title":"ihuan Winter Waterproof Ski Gloves Men Women, Snow Warm Cycling","price":23.96,"originalPrice":28.19,"discount":15,"category":"sports"},{"id":"B0BXYKQBDC","title":"Micro Ingredients Oil of Oregano Softgels, 300 Count | 2 in 1 with Black Seed Oil","price":41.89,"originalPrice":49.29,"discount":15,"category":"health"},{"id":"B0FDWDLDNX","title":"KOPEECHO Full Size Mattress, 8 Inch Gel Memory Foam, Medium Firm","price":143.84,"originalPrice":169.23,"discount":15,"category":"home"},{"id":"B09BD8GZ8L","title":"Nectar Hydration Packets - Electrolytes Powder Packets - Sugar Free","price":35.85,"originalPrice":42.17,"discount":15,"category":"health"},{"id":"B0GLM8GZQW","title":"Samsung Galaxy Buds 4 Pro (2026) AI True Wireless Bluetooth Earbuds + $30 Gift Card","price":352.58,"originalPrice":394.89,"discount":11,"category":"tech"},{"id":"B0DJMP6T3N","title":"BISSELL Little Green Mini Portable Carpet and Upholstery Deep Cleaner","price":125.51,"originalPrice":141.02,"discount":11,"category":"home"},{"id":"B08DTHN72W","title":"Chakir Turkish Linens | Hotel & Spa Quality 100% Cotton Premium Turkish Towels","price":15.22,"originalPrice":16.91,"discount":10,"category":"home"},{"id":"B0CFXGF2XM","title":"Sony WH-1000XM5 Wireless Headphones","price":248,"originalPrice":398,"category":"tech"},{"id":"B0D5FZ7C3L","title":"Apple AirPods Pro 2","price":189,"originalPrice":249,"category":"tech"},{"id":"B0C8H5J8N2","title":"Samsung 990 Pro 2TB SSD","price":149,"originalPrice":249,"category":"tech"}];
     const affiliateTag = 'your-tag-20';
+    const amazonDomain = 'amazon.com.au';
     const container = document.getElementById('deals');
     
     deals.forEach(deal => {
@@ -175,11 +176,11 @@
           <h3 class="deal-title">${deal.title}</h3>
           <p class="deal-category">📦 ${deal.category}</p>
           <div class="deal-prices">
-            <span class="price-current">$${deal.price.toFixed(2)}</span>
-            <span class="price-original">$${deal.originalPrice.toFixed(2)}</span>
+            <span class="price-current">A$${deal.price.toFixed(2)}</span>
+            <span class="price-original">A$${deal.originalPrice.toFixed(2)}</span>
             <span class="price-discount">-${deal.discount}%</span>
           </div>
-          <a href="https://www.amazon.com/dp/${deal.id}?tag=${affiliateTag}" class="btn" target="_blank" rel="noopener">
+          <a href="https://www.${amazonDomain}/dp/${deal.id}?tag=${affiliateTag}" class="btn" target="_blank" rel="noopener">
             Get This Deal →
           </a>
         </div>

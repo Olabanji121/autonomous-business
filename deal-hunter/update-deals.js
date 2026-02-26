@@ -7,7 +7,8 @@ import { execSync } from 'child_process';
 
 const DATA_FILE = '/home/obanj/smart/projects/deal-hunter/data/deals.json';
 const BLOG_DIR = '/home/obanj/smart/projects/deal-hunter/blog';
-const AFFILIATE_TAG = 'your-tag-20'; // Replace with your real tag
+const AFFILIATE_TAG = 'your-tag-20';
+const AMAZON_DOMAIN = 'amazon.com.au';
 
 function log(msg) {
   const ts = new Date().toISOString().split('T')[1].split('.')[0];
@@ -171,8 +172,8 @@ function generateSite(deals) {
 </head>
 <body>
   <header>
-    <h1>🔥 Daily Deals</h1>
-    <p>Best Amazon deals updated daily. Save up to 50%!</p>
+    <h1>🔥 Daily Deals Australia</h1>
+    <p>Best Amazon Australia deals updated daily. Save up to 50%!</p>
   </header>
   
   <div class="stats">
@@ -185,7 +186,7 @@ function generateSite(deals) {
       <div class="stat-label">Max Discount</div>
     </div>
     <div class="stat">
-      <div class="stat-value" id="total-savings">$${sorted.reduce((sum, d) => sum + ((d.originalPrice || 0) - (d.price || 0)), 0).toFixed(0)}</div>
+      <div class="stat-value" id="total-savings">A$${sorted.reduce((sum, d) => sum + ((d.originalPrice || 0) - (d.price || 0)), 0).toFixed(0)}</div>
       <div class="stat-label">Total Savings</div>
     </div>
   </div>
@@ -205,6 +206,7 @@ function generateSite(deals) {
   <script>
     const deals = ${dealsJson};
     const affiliateTag = '${AFFILIATE_TAG}';
+    const amazonDomain = '${AMAZON_DOMAIN}';
     const container = document.getElementById('deals');
     
     deals.forEach(deal => {
@@ -219,11 +221,11 @@ function generateSite(deals) {
           <h3 class="deal-title">\${deal.title}</h3>
           <p class="deal-category">📦 \${deal.category}</p>
           <div class="deal-prices">
-            <span class="price-current">$\${deal.price.toFixed(2)}</span>
-            <span class="price-original">$\${deal.originalPrice.toFixed(2)}</span>
+            <span class="price-current">A$\${deal.price.toFixed(2)}</span>
+            <span class="price-original">A$\${deal.originalPrice.toFixed(2)}</span>
             <span class="price-discount">-\${deal.discount}%</span>
           </div>
-          <a href="https://www.amazon.com/dp/\${deal.id}?tag=\${affiliateTag}" class="btn" target="_blank" rel="noopener">
+          <a href="https://www.\${amazonDomain}/dp/\${deal.id}?tag=\${affiliateTag}" class="btn" target="_blank" rel="noopener">
             Get This Deal →
           </a>
         </div>

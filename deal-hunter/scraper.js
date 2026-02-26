@@ -6,6 +6,7 @@ import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 
 const DATA_FILE = '/home/obanj/smart/projects/deal-hunter/data/deals.json';
 const AFFILIATE_TAG = 'your-tag-20';
+const AMAZON_DOMAIN = 'amazon.com.au';
 
 function log(msg) {
   const ts = new Date().toISOString().split('T')[1].split('.')[0];
@@ -37,13 +38,13 @@ async function camofoxRequest(action, params = {}) {
 }
 
 async function scrapeAmazonDeals() {
-  log('Opening Amazon Deals page...');
+  log('Opening Amazon Australia Deals page...');
   
   // Create tab
   const tabRes = await fetch('http://localhost:9222/create_tab', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ url: 'https://www.amazon.com/gp/goldbox' }),
+    body: JSON.stringify({ url: `https://www.${AMAZON_DOMAIN}/gp/goldbox` }),
   });
   const { tabId } = await tabRes.json();
   
@@ -109,9 +110,9 @@ function parseDealsFromSnapshot(snapshot) {
         originalPrice,
         discount,
         category,
-        url: `https://www.amazon.com/dp/${asin}`,
-        affiliateUrl: `https://www.amazon.com/dp/${asin}?tag=${AFFILIATE_TAG}`,
-        source: 'amazon',
+        url: `https://www.${AMAZON_DOMAIN}/dp/${asin}`,
+        affiliateUrl: `https://www.${AMAZON_DOMAIN}/dp/${asin}?tag=${AFFILIATE_TAG}`,
+        source: 'amazon-au',
         scrapedAt: new Date().toISOString(),
       });
     }
