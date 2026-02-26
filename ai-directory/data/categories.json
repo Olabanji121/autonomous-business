@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Chat",
+    "slug": "chat",
+    "emoji": "💬",
+    "description": "AI chatbots and conversational assistants"
+  },
+  {
+    "name": "Image",
+    "slug": "image",
+    "emoji": "🎨",
+    "description": "AI image generation and editing"
+  },
+  {
+    "name": "Video",
+    "slug": "video",
+    "emoji": "🎬",
+    "description": "AI video creation and editing"
+  },
+  {
+    "name": "Audio",
+    "slug": "audio",
+    "emoji": "🎵",
+    "description": "AI voice, music, and audio tools"
+  },
+  {
+    "name": "Code",
+    "slug": "code",
+    "emoji": "💻",
+    "description": "AI coding assistants and tools"
+  },
+  {
+    "name": "Writing",
+    "slug": "writing",
+    "emoji": "✍️",
+    "description": "AI writing and content tools"
+  },
+  {
+    "name": "Search",
+    "slug": "search",
+    "emoji": "🔍",
+    "description": "AI-powered search engines"
+  },
+  {
+    "name": "Productivity",
+    "slug": "productivity",
+    "emoji": "⚡",
+    "description": "AI tools for work efficiency"
+  },
+  {
+    "name": "Data",
+    "slug": "data",
+    "emoji": "📊",
+    "description": "AI for data analysis and visualization"
+  },
+  {
+    "name": "Design",
+    "slug": "design",
+    "emoji": "🎯",
+    "description": "AI design and creative tools"
+  }
+]

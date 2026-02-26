@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Claude",
+    "category": "chat",
+    "url": "https://claude.ai",
+    "pricing": "Freemium",
+    "description": "Advanced AI assistant by Anthropic for conversations, analysis, and creative tasks.",
+    "featured": true,
+    "id": "claude",
+    "slug": "claude",
+    "addedAt": "2026-02-26T09:25:57.911Z"
+  },
+  {
+    "name": "ChatGPT",
+    "category": "chat",
+    "url": "https://chat.openai.com",
+    "pricing": "Freemium",
+    "description": "OpenAI's conversational AI for questions, writing, and coding assistance.",
+    "featured": true,
+    "id": "chatgpt",
+    "slug": "chatgpt",
+    "addedAt": "2026-02-26T09:25:57.914Z"
+  },
+  {
+    "name": "Midjourney",
+    "category": "image",
+    "url": "https://midjourney.com",
+    "pricing": "Paid",
+    "description": "AI image generation with artistic styles and detailed prompting.",
+    "featured": true,
+    "id": "midjourney",
+    "slug": "midjourney",
+    "addedAt": "2026-02-26T09:25:57.914Z"
+  },
+  {
+    "name": "DALL-E 3",
+    "category": "image",
+    "url": "https://openai.com/dall-e-3",
+    "pricing": "Paid",
+    "description": "OpenAI's image generation model with natural language prompts.",
+    "featured": true,
+    "id": "dall-e-3",
+    "slug": "dall-e-3",
+    "addedAt": "2026-02-26T09:25:57.917Z"
+  },
+  {
+    "name": "GitHub Copilot",
+    "category": "code",
+    "url": "https://github.com/features/copilot",
+    "pricing": "Paid",
+    "description": "AI pair programmer that suggests code in your IDE.",
+    "featured": true,
+    "id": "github-copilot",
+    "slug": "github-copilot",
+    "addedAt": "2026-02-26T09:25:57.917Z"
+  },
+  {
+    "name": "Cursor",
+    "category": "code",
+    "url": "https://cursor.sh",
+    "pricing": "Freemium",
+    "description": "AI-first code editor built for pair programming with AI.",
+    "featured": true,
+    "id": "cursor",
+    "slug": "cursor",
+    "addedAt": "2026-02-26T09:25:57.917Z"
+  },
+  {
+    "name": "Perplexity",
+    "category": "search",
+    "url": "https://perplexity.ai",
+    "pricing": "Freemium",
+    "description": "AI-powered search engine with cited sources and follow-up questions.",
+    "id": "perplexity",
+    "slug": "perplexity",
+    "addedAt": "2026-02-26T09:25:57.917Z",
+    "featured": false
+  },
+  {
+    "name": "Notion AI",
+    "category": "writing",
+    "url": "https://notion.so/product/ai",
+    "pricing": "Paid",
+    "description": "AI writing assistant integrated into Notion workspace.",
+    "id": "notion-ai",
+    "slug": "notion-ai",
+    "addedAt": "2026-02-26T09:25:57.918Z",
+    "featured": false
+  },
+  {
+    "name": "Jasper",
+    "category": "writing",
+    "url": "https://jasper.ai",
+    "pricing": "Paid",
+    "description": "AI content platform for marketing teams.",
+    "id": "jasper",
+    "slug": "jasper",
+    "addedAt": "2026-02-26T09:25:57.918Z",
+    "featured": false
+  },
+  {
+    "name": "Runway",
+    "category": "video",
+    "url": "https://runway.ml",
+    "pricing": "Freemium",
+    "description": "AI video editing and generation tools.",
+    "id": "runway",
+    "slug": "runway",
+    "addedAt": "2026-02-26T09:25:57.918Z",
+    "featured": false
+  },
+  {
+    "name": "ElevenLabs",
+    "category": "audio",
+    "url": "https://elevenlabs.io",
+    "pricing": "Freemium",
+    "description": "AI voice synthesis and cloning.",
+    "id": "elevenlabs",
+    "slug": "elevenlabs",
+    "addedAt": "2026-02-26T09:25:57.918Z",
+    "featured": false
+  },
+  {
+    "name": "Otter.ai",
+    "category": "audio",
+    "url": "https://otter.ai",
+    "pricing": "Freemium",
+    "description": "AI meeting transcription and notes.",
+    "id": "otter-ai",
+    "slug": "otter-ai",
+    "addedAt": "2026-02-26T09:25:57.919Z",
+    "featured": false
+  }
+]

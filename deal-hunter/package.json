@@ -1,0 +1,15 @@
+{
+  "name": "deal-hunter",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Autonomous deal scraping and posting system",
+  "main": "src/cli.js",
+  "bin": {
+    "deals": "./src/cli.js"
+  },
+  "scripts": {
+    "scrape": "node src/cli.js scrape",
+    "post": "node src/cli.js post",
+    "stats": "node src/cli.js stats"
+  }
+}
