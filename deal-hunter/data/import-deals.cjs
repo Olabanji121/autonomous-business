@@ -1,0 +1,56 @@
+const fs = require('fs');
+
+const deals = [
+  { id: 'B0GGTVNKGP', title: 'Samsung Galaxy S26 Ultra, Unlocked Android Smartphone + $200 Gift Card, 512GB', price: 1833.45, originalPrice: 2397.60, discount: 24, category: 'phone' },
+  { id: 'B01LYNW421', title: 'Beckham Hotel Collection Bed Pillows Standard/Queen Size Set of 2', price: 59.19, originalPrice: 112.81, discount: 48, category: 'home' },
+  { id: 'B0FNQDNGXY', title: 'Samsung 27" Odyssey OLED G5 (G50SF) QHD & QD-OLED Gaming Monitor, 180Hz', price: 493.61, originalPrice: 775.68, discount: 36, category: 'tech' },
+  { id: 'B08DTHN72W', title: 'Chakir Turkish Linens | Hotel & Spa Quality 100% Cotton Premium Turkish Towels', price: 15.22, originalPrice: 16.91, discount: 10, category: 'home' },
+  { id: 'B0CT8SRHQC', title: 'ihuan Winter Waterproof Ski Gloves Men Women, Snow Warm Cycling', price: 23.96, originalPrice: 28.19, discount: 15, category: 'sports' },
+  { id: 'B0C59FJY2X', title: 'Extra Deep King Sheet Set - 6 Piece Breathable and Cooling Sheets', price: 59.87, originalPrice: 77.56, discount: 23, category: 'home' },
+  { id: 'B0BXYKQBDC', title: 'Micro Ingredients Oil of Oregano Softgels, 300 Count | 2 in 1 with Black Seed Oil', price: 41.89, originalPrice: 49.29, discount: 15, category: 'health' },
+  { id: 'B0GLM8GZQW', title: 'Samsung Galaxy Buds 4 Pro (2026) AI True Wireless Bluetooth Earbuds + $30 Gift Card', price: 352.58, originalPrice: 394.89, discount: 11, category: 'tech' },
+  { id: 'B0BZLM8GJ2', title: 'AXV Vibration Plate Fitness Platform Exercise Machine', price: 141.02, originalPrice: 183.33, discount: 23, category: 'fitness' },
+  { id: 'B0B8TR1VLM', title: 'RuffleButts Baby Girls UPF 50+ Sun Protection Floral Long Sleeve Rash Guard Swimsuit', price: 28.19, originalPrice: 59.24, discount: 52, category: 'baby' },
+  { id: 'B083JHCCV2', title: 'Boka Fluoride Free Toothpaste, Nano Hydroxyapatite for Sensitive Teeth', price: 14.09, originalPrice: 19.73, discount: 29, category: 'health' },
+  { id: 'B01KE592JU', title: 'Methylated Multivitamin for Men with Bioavailable Vitamins, Chelated Minerals', price: 25.88, originalPrice: 43.71, discount: 41, category: 'health' },
+  { id: 'B0DJMP6T3N', title: 'BISSELL Little Green Mini Portable Carpet and Upholstery Deep Cleaner', price: 125.51, originalPrice: 141.02, discount: 11, category: 'home' },
+  { id: 'B0CG5P42QH', title: 'G4Free Petite Wide Leg Pants for Women Yoga Dress Pants with Pockets', price: 37.13, originalPrice: 52.17, discount: 29, category: 'fashion' },
+  { id: 'B0FDWDLDNX', title: 'KOPEECHO Full Size Mattress, 8 Inch Gel Memory Foam, Medium Firm', price: 143.84, originalPrice: 169.23, discount: 15, category: 'home' },
+  { id: 'B0C2C9NHZW', title: 'LEVOIT Top Fill Humidifiers for Bedroom, 2.5L Tank for Large Room', price: 39.42, originalPrice: 56.40, discount: 30, category: 'home' },
+  { id: 'B01728NLRG', title: 'Coway Airmega AP-1512HH(W) True HEPA Purifier with Air Quality Monitoring', price: 218.59, originalPrice: 324.37, discount: 33, category: 'home' },
+  { id: 'B09BD8GZ8L', title: 'Nectar Hydration Packets - Electrolytes Powder Packets - Sugar Free', price: 35.85, originalPrice: 42.17, discount: 15, category: 'health' },
+];
+
+const affiliateTag = 'your-tag-20';
+
+const formattedDeals = deals.map(d => ({
+  id: d.id,
+  asin: d.id,
+  title: d.title,
+  price: d.price,
+  originalPrice: d.originalPrice,
+  discount: d.discount,
+  category: d.category,
+  url: `https://www.amazon.com/dp/${d.id}`,
+  affiliateUrl: `https://www.amazon.com/dp/${d.id}?tag=${affiliateTag}`,
+  source: 'amazon',
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString()
+}));
+
+// Read existing deals
+let existing = [];
+try {
+  existing = JSON.parse(fs.readFileSync('data/deals.json', 'utf-8'));
+} catch (e) {}
+
+// Merge (update existing, add new)
+const dealMap = new Map(existing.map(d => [d.id, d]));
+for (const deal of formattedDeals) {
+  dealMap.set(deal.id, { ...dealMap.get(deal.id), ...deal });
+}
+
+// Save
+const allDeals = Array.from(dealMap.values());
+fs.writeFileSync('data/deals.json', JSON.stringify(allDeals, null, 2));
+console.log(`Saved ${formattedDeals.length} deals. Total: ${allDeals.length}`);

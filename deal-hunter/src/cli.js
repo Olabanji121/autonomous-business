@@ -38,6 +38,11 @@ async function tweet() {
   await runScript('generate-content.js', ['tweet']);
 }
 
+async function telegram() {
+  log('Generating telegram message...');
+  await runScript('generate-content.js', ['telegram']);
+}
+
 async function digest() {
   log('Generating daily digest...');
   await runScript('generate-content.js', ['digest']);
@@ -95,6 +100,9 @@ async function main() {
       break;
     case 'tweet':
       await tweet();
+      break;
+    case 'telegram':
+      await telegram();
       break;
     case 'digest':
       await digest();
