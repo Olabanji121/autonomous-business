@@ -2,6 +2,11 @@
 # Daily Deal Hunter - Run via cron at 6 AM daily
 # crontab entry: 0 6 * * * /home/obanj/smart/projects/deal-hunter/daily-cron.sh
 
+# Set up Node environment for cron
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+export PATH="$HOME/.nvm/versions/node/v25.6.1/bin:$PATH"
+
 cd /home/obanj/smart/projects/deal-hunter
 
 LOG_FILE="/home/obanj/smart/projects/deal-hunter/logs/daily-$(date +%Y-%m-%d).log"

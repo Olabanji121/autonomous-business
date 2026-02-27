@@ -1,6 +1,11 @@
 #!/bin/bash
 # Full Traffic Automation - Generate and prepare posts for all channels
 
+# Set up Node environment for cron
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+export PATH="$HOME/.nvm/versions/node/v25.6.1/bin:$PATH"
+
 cd /home/obanj/smart/projects/deal-hunter
 
 DATE=$(date +%Y-%m-%d)
