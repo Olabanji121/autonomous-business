@@ -502,5 +502,15 @@
     "addedAt": "2026-02-26T09:44:33.988Z",
     "updatedAt": "2026-02-26T09:44:33.988Z",
     "featured": false
+  },
+  {
+    "name": "Agent QA",
+    "category": "code",
+    "url": "https://github.com/vostride/agent-qa",
+    "description": "Source-available CLI and MCP server for AI-agent quality assurance across browser and mobile workflows; external provider costs may apply.",
+    "id": "agent-qa",
+    "slug": "agent-qa",
+    "addedAt": "2026-08-17T01:24:34.000Z",
+    "featured": false
   }
 ]
